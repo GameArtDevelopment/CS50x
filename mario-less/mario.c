@@ -1,19 +1,35 @@
 #include <stdio.h>
 
+void print_row(int length);
+void print_space(int space);
+
 int main(void)
 {
-    int n;
-    do
-    {
-        printf("Size: ");
-        scanf("%d", &n);
-    } while (n < 1);
+    int height;
+    printf("Height: ");
+    scanf("%d", &height);
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < n; j++)
-            printf("#");
-        printf("\n");
+        print_space(i + 1);
+        print_row(i + 1);
     }
     return 0;
+}
+
+void print_row(int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        printf("#");
+    }
+    printf("\n");
+}
+
+void print_space(int height)
+{
+    for (int i = 0; i < height; i++)
+    {
+        printf(" ");
+    }
 }
